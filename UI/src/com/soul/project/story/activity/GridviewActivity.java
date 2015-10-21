@@ -22,7 +22,7 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 	
 	GridView gridView;
 	ImageView backView;
-	ImageView indexView;
+	ImageView uploadView;
 	TextView txtTitle;
 	List<GridViewBean> list = new ArrayList<GridViewBean>();
 	int width;
@@ -80,7 +80,7 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 		gridView.setAdapter(new GridViewAdapter(this, list, width, height));
 		
 		backView = (ImageView)findViewById(R.id.iv_button_back);
-		indexView = (ImageView)findViewById(R.id.iv_button_index);
+		uploadView = (ImageView)findViewById(R.id.iv_button_upload);
 		txtTitle = (TextView)findViewById(R.id.tv_txt_title);
 	}
 
