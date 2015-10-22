@@ -14,7 +14,6 @@
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
         android:persistent="true"
-        android:theme="@style/AppTheme"
         android:taskAffinity="android.task.soul.myapp" >
         <meta-data
             android:name="BaiduMobAd_APP_ID"

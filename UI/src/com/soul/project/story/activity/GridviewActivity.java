@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -89,7 +90,6 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 			long id) {
 		// TODO Auto-generated method stub
 		Intent intent = new Intent(GridviewActivity.this, GVDetailActivity.class);
-		
 		GridViewBean bean = list.get(position);
 		intent.putExtra("title", bean.getTitle());
 		intent.putExtra("desc", bean.getDescription());
@@ -101,17 +101,17 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 		intent.putExtra("imageUrl", bean.getImageUrl());
 		intent.putExtra("width", width);
 		intent.putExtra("height", height);
-		
 		startActivity(intent);
 	}
 
-	
 	private void getWH()
 	{
 	    DisplayMetrics metric = new DisplayMetrics();  
 	    getWindowManager().getDefaultDisplay().getMetrics(metric);  
 	    width = metric.widthPixels;     // 屏幕宽度（像素）  
 	    height = metric.heightPixels;   // 屏幕高度（像素）  
+	    
+	    Log.i("XU", "w="+width+"  h="+height);
 	    //float density = metric.density;      // 屏幕密度（0.75 / 1.0 / 1.5）  
 	    //int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）  
 	}

@@ -5,26 +5,23 @@
     android:orientation="vertical" >
 
             <FrameLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
                 <LinearLayout
                     android:id="@+id/linearlayoutsy"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal" >
-					
-                    <com.soul.project.application.view.MyImgScroll 
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/activity_index_autoscrollview"
-                        >
-                    </com.soul.project.application.view.MyImgScroll>
 
+                    <com.soul.project.application.view.ImageCycleView
+                        android:id="@+id/activity_index_autoscrollview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                    </com.soul.project.application.view.ImageCycleView>
+                    
                 </LinearLayout>
-                
-                <!-- 该布局用于展示轮播控件底部的一排指示点 -->
+
                 <LinearLayout
                     android:id="@+id/ss_ll_points"
                     android:layout_width="fill_parent"
@@ -34,5 +31,67 @@
                     android:orientation="horizontal" >
                 </LinearLayout>
             </FrameLayout>
-
+            
+            <!-- 左边作者信息点击联系    右边点赞图标 -->
+            <RelativeLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <ImageButton 
+	                android:id="@+id/ibContact"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@drawable/checkbox_bg1"
+	                android:layout_centerVertical="true"
+	                android:layout_alignParentLeft="true"
+	                />
+                
+	            <TextView 
+	                android:id="@+id/txtAuthor"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:gravity="center"
+	                android:singleLine="true"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginTop="5dp"
+	                android:maxEms="8"
+	                android:text="夏小莲"
+	                android:textSize="18sp"
+	                android:layout_centerVertical="true"
+	                android:layout_toRightOf="@id/ibContact"
+	                android:textColor="@color/sea_blue"
+	                />
+	            
+	            <TextView 
+	                android:id="@+id/txtNumOfZan"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:gravity="center"
+	                android:singleLine="true"
+	                android:text="36"
+	                android:textSize="12sp"
+	                android:layout_centerVertical="true"
+	                android:layout_alignParentRight="true"
+	                android:textColor="@color/blue_two"
+	                />
+	            
+	            <ImageButton 
+	                android:id="@+id/ibZan"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@drawable/checkbox_bg1"
+	                android:layout_centerVertical="true"
+	                android:layout_toLeftOf="@id/txtNumOfZan"
+	                />
+            </RelativeLayout>
+            
+            <TextView 
+                android:id="@+id/txtIntroduction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:padding="3dp"
+                android:text="简介，即简明扼要的介绍。是当事人全面而简洁地介绍情况的一种书面表达方式，它是应用写作学研究的一种日常应用文体。介绍可用于人、书、画等。 基本信息 【词目】 介绍 【拼音】jiè shào 【注音】"
+                />
 </LinearLayout>
