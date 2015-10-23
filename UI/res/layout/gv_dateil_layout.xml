@@ -124,7 +124,7 @@
         />
 
     <RelativeLayout
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:drawableTop="@drawable/checkbox_selected_press"
-            android:text="分享"
+            android:text="分享(125)"
             android:layout_marginLeft="20dp"
             android:textColor="@color/darkblue"
             android:textSize="14sp" />
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:drawableTop="@drawable/checkbox_selected_press"
-            android:text="赞一个"
+            android:text="赞一个(320)"
             android:textColor="@color/darkblue"
             android:textSize="14sp" />
 
@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:drawableTop="@drawable/checkbox_selected_press"
-            android:text="评论"
+            android:text="评论(58)"
             android:layout_marginRight="20dp"
             android:textColor="@color/darkblue"
             android:textSize="14sp" />
@@ -168,7 +168,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_marginTop="10dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:focusable="true"
         android:focusableInTouchMode="true"
         >

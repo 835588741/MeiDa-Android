@@ -55,6 +55,7 @@ public class GVDetailActivity extends Activity implements OnClickListener{
 	private TextView txtAuthor ;	 // 本作的作者
 	private TextView txtOffice;		 // 作者官职
 	private ImageButton ibContact;   // 联系按钮  可以考虑或换成头像
+	private boolean isShowEditComment = false;// 是否显示评论编辑控件
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +99,18 @@ public class GVDetailActivity extends Activity implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.txtCommentBtn:break;
+		case R.id.txtCommentBtn:
+			if(!isShowEditComment)
+			{
+				isShowEditComment = true;
+				layoutEditComment.setVisibility(View.VISIBLE);
+			}
+			else
+			{
+				isShowEditComment = false;
+				layoutEditComment.setVisibility(View.GONE);
+			}
+			break;
 		case R.id.txtGoodBtn:break;
 		case R.id.txtShareBtn:break;
 		case R.id.btnSubmit:break;
