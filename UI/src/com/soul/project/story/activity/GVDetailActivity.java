@@ -8,19 +8,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.soul.project.application.adapter.CommentsAdapter;
+import com.soul.project.application.bean.CommentBean;
 import com.soul.project.application.bean.GridViewBean;
 import com.soul.project.application.util.BitmapCache;
 import com.soul.project.application.view.Constants;
 import com.soul.project.application.view.ImageCycleView;
 import com.soul.project.application.view.ImageCycleView.ImageCycleViewListener;
 
-public class GVDetailActivity extends Activity{
+public class GVDetailActivity extends Activity implements OnClickListener{
 
 	private GridViewBean bean;
 	private ImageCycleView scrollView;
@@ -31,7 +39,22 @@ public class GVDetailActivity extends Activity{
 	private int maxHeight;
 	private ImageLoader mImageLoader;
 	private int additional = 5; //轮播控件的额外高度
-
+	private List<CommentBean> list = new ArrayList<CommentBean>();
+	
+	private CommentsAdapter adapter;
+	
+	private ListView listviewComments; // 评论的列表
+	private LinearLayout layoutEditComment; // 评论编写和提交的布局视图容器
+	private Button btnCommentSubmit; // 评论提交
+	private EditText etCommentEdit; // 评论编辑框
+	private TextView txtCommentBtn; // 功能块布局中的评论功能按钮
+	private TextView txtGoodBtn;    // 功能块布局中的点赞功能按钮
+	private TextView txtShareBtn;   // 功能块布局中的分享功能按钮
+	private TextView txtIntroduction;// 简介说明
+	private TextView txtNumOfLook ;  // 热度数量
+	private TextView txtAuthor ;	 // 本作的作者
+	private TextView txtOffice;		 // 作者官职
+	private ImageButton ibContact;   // 联系按钮  可以考虑或换成头像
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +67,44 @@ public class GVDetailActivity extends Activity{
 		getIntentData();
 		createData();
 		initViews();
+		initEvent();
+		initValue();
+	}
+
+
+	private void initValue() {
+		// TODO Auto-generated method stub
+		list.add(new CommentBean("你好美女，很高兴认识你", "上官宇[中大夫]", "2015-10-23 18:30", "http:www.baidu.com/image.png"));
+		list.add(new CommentBean("你的头发好长啊，哈哈哈哈哈", "张先玄[上大夫]", "2015-10-23 18:30", "http:www.baidu.com/image.png"));
+		list.add(new CommentBean("你的假发是在哪里买的？", "张菲[大鸿胪]", "2015-10-23 18:30", "http:www.baidu.com/image.png"));
+		list.add(new CommentBean("你的下巴是在哪家医院做的，挺好的", "韩婷[下大夫]", "2015-10-23 18:30", "http:www.baidu.com/image.png"));
+		list.add(new CommentBean("你好，我叫张定远", "张定远[御史大夫]", "2015-10-23 18:30", "http:www.baidu.com/image.png"));
+		
+		
+		adapter = new CommentsAdapter(this, list);
+		listviewComments.setAdapter(adapter);
+	}
+
+
+	private void initEvent() {
+		// TODO Auto-generated method stub
+		txtCommentBtn.setOnClickListener(this);
+		txtGoodBtn.setOnClickListener(this);
+		txtShareBtn.setOnClickListener(this);
+		btnCommentSubmit.setOnClickListener(this);
+	}
+	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.txtCommentBtn:break;
+		case R.id.txtGoodBtn:break;
+		case R.id.txtShareBtn:break;
+		case R.id.btnSubmit:break;
+		default:
+			break;
+		}
 	}
 
 
@@ -69,7 +130,25 @@ public class GVDetailActivity extends Activity{
 		int height = (int) (maxWidth / 2.0);
 		//也可以在代码中设置宽高 
 		scrollView.setLayoutParams(new LinearLayout.LayoutParams(maxWidth, height+additional));
+		scrollView.setWidthAndHeight(maxWidth, height+additional);
 		scrollView.setImageResources(imgUrls, adTexts, mAdCycleViewListener);
+		
+		listviewComments = (ListView)this.findViewById(R.id.lvCommentsList);
+		layoutEditComment = (LinearLayout)this.findViewById(R.id.layoutEditComment);
+		btnCommentSubmit = (Button)this.findViewById(R.id.btnSubmit);
+		etCommentEdit = (EditText)this.findViewById(R.id.etCommentValue);
+		txtAuthor = (TextView)this.findViewById(R.id.txtAuthor);
+		
+		// 评论 点赞  分享 
+		txtCommentBtn = (TextView)this.findViewById(R.id.txtCommentBtn);
+		txtGoodBtn = (TextView)this.findViewById(R.id.txtGoodBtn);
+		txtShareBtn = (TextView)this.findViewById(R.id.txtShareBtn);
+		
+		txtIntroduction = (TextView)this.findViewById(R.id.txtIntroduction);
+		txtNumOfLook = (TextView)this.findViewById(R.id.txtNumOfLook);
+		txtOffice = (TextView)this.findViewById(R.id.txtOffice);
+		
+		ibContact = (ImageButton)this.findViewById(R.id.ibContact);
 	}
 	
 
@@ -139,4 +218,8 @@ public class GVDetailActivity extends Activity{
 		
 		Log.i("XU", "w="+maxWidth+"  h="+maxHeight);
 	}
+
+
+
+
 }

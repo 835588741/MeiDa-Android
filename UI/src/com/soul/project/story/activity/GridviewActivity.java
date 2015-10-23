@@ -112,7 +112,7 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 	    height = metric.heightPixels;   // 屏幕高度（像素）  
 	    
 	    Log.i("XU", "w="+width+"  h="+height);
-	    //float density = metric.density;      // 屏幕密度（0.75 / 1.0 / 1.5）  
-	    //int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）  
+	    float density = metric.density;      // 屏幕密度（0.75 / 1.0 / 1.5）  
+	    int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）  
 	}
 }

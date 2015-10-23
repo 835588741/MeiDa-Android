@@ -77,6 +77,12 @@ public class ImageCycleView extends LinearLayout {
 		super(context);
 	}
 	
+	public void setWidthAndHeight(int width,int height)
+	{
+		//!________!~~~~~~~~~~~~~~~~~设置宽高
+		mAdvPager.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(width,height));
+	}
+	
 	/**
 	 * @param context
 	 * @param attrs
@@ -91,9 +97,6 @@ public class ImageCycleView extends LinearLayout {
 		DisplayMetrics metric = new DisplayMetrics();
 		((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(metric);
 		int width = metric.widthPixels;
-		
-		//!________!~~~~~~~~~~~~~~~~~设置宽高
-		mAdvPager.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(width,width/3+40));
 		
 		mAdvPager.setOnPageChangeListener(new GuidePageChangeListener());
 		mAdvPager.setOnTouchListener(new OnTouchListener() {
@@ -122,6 +125,8 @@ public class ImageCycleView extends LinearLayout {
 	 * 
 	 * @param imageUrlList
 	 * @param imageCycleViewListener
+	 * @param heighe 
+	 * @param width 
 	 */
 	public void setImageResources(List<String> imageUrlList, List<String> imageNameList,ImageCycleViewListener imageCycleViewListener) {
 		this.imageNameList=imageNameList;
