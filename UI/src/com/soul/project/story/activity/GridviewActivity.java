@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -19,7 +20,7 @@ import android.widget.TextView;
 import com.soul.project.application.adapter.GridViewAdapter;
 import com.soul.project.application.bean.GridViewBean;
 
-public class GridviewActivity extends Activity implements OnItemClickListener {
+public class GridviewActivity extends Activity implements OnItemClickListener, OnClickListener {
 	
 	GridView gridView;
 	ImageView backView;
@@ -28,6 +29,7 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 	List<GridViewBean> list = new ArrayList<GridViewBean>();
 	int width;
 	int height;
+	int type; // 1|美女   2|美男   3|美景
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,12 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.image_gridview_layout);
+		type = getIntent().getIntExtra("type",-1);
+		
+		Log.i("XU", "type=="+type);
 		
 		getWH();
-		createValue();
+		getDataValue();
 		initViews();
 		initEvent();
 	}
@@ -45,9 +50,10 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 	private void initEvent() {
 		// TODO Auto-generated method stub
 		gridView.setOnItemClickListener(this);
+		backView.setOnClickListener(this);
 	}
 
-	private void createValue() {
+	private void getDataValue() {
 		// TODO Auto-generated method stub
 		String imageUrl1 = "http://f.hiphotos.baidu.com/image/pic/item/bd315c6034a85edf405207cf4d540923dc547504.jpg";
 		GridViewBean bean1 = new GridViewBean(imageUrl1, "高卢第一女书画家", "打瞌睡的实践活动手机客户端升级快还是看机会", "2015001","章风" ,98, 2, 0);
@@ -114,5 +120,18 @@ public class GridviewActivity extends Activity implements OnItemClickListener {
 	    Log.i("XU", "w="+width+"  h="+height);
 	    float density = metric.density;      // 屏幕密度（0.75 / 1.0 / 1.5）  
 	    int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）  
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.iv_button_back:
+			finish();
+			break;
+
+		default:
+			break;
+		}
 	}
 }

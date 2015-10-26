@@ -30,7 +30,7 @@ public class SplashActivity extends Activity {
 	{
 		public void handleMessage(android.os.Message msg) 
 		{
-			Activity2Activity.gotoNewActivity(SplashActivity.this, MainActivity.class);
+			Activity2Activity.gotoNewActivity(SplashActivity.this, LoginAndRegistActivity.class);
 		};
 	};
 	

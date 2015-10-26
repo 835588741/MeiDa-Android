@@ -16,4 +16,9 @@
     <!-- MainActivity -->
 	<string name="function_null">Function null...</string>
 	<string name="function_error">Function errot...</string>
+	
+		<string name="phone_or_email">手机或邮箱</string>
+	<string name="password">密码</string>
+	<string name="string_return">返回</string>
+	<string name="string_thirder_login">第三方登录</string>
 </resources>

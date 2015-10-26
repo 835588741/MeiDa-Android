@@ -8,8 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import android.content.Context;
-import android.os.storage.StorageManager;
 import android.util.Log;
 
 /**

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.soul.project.story.activity.R;
 
 public class ToastUtil
@@ -14,20 +15,22 @@ public class ToastUtil
 //	{
 //		ERROR,WARN,INFO
 //	}
-	/**������ʽ**/
+	/**错误样式**/
 	public static final int ERROR = 1;
-	/**������ʽ**/
+	/**警告样式**/
 	public static final int WARN  = 2;
-	/**��ͨ��Ϣ��ʽ**/
+	/**普通信息样式**/
 	public static final int INFO  = 3;
-	/**������ʽ**/
+	/**加载样式**/
 	public static final int LOAD  = 4;
+	/**成功提示样式**/
+	public static final int SUCC  = 5;
 	
 	/**
-	 * Toast��ʾ
+	 * Toast显示
 	 * @param context
-	 * @param str	��ʾ���ַ�
-	 * @param typeOfToastShow	Toast���� ---> ERROR��WARN��INFO��LOAD
+	 * @param str	显示的字符串
+	 * @param typeOfToastShow	Toast类型 ---> ERROR、WARN、INFO、LOAD
 	 */
 	public static void show(Context context,String str,int typeOfToastShow)
 	{
@@ -39,6 +42,7 @@ public class ToastUtil
 		toast.show();
 	}
 	
+	/**获取视图*/
 	private static View getView(int type,Context context,String str)
 	{
 		View view = null;
@@ -67,6 +71,13 @@ public class ToastUtil
 				txt.setText(str);
 				img.setBackgroundResource(R.drawable.toast_load);
 				break;
+			case SUCC :
+				view = View.inflate(context, R.layout.cmp_rich_toast, null);
+				img = (ImageView)view.findViewById(R.id.toast_img);
+				txt = (TextView)view.findViewById(R.id.toast_txt);
+				txt.setText(str);
+				img.setBackgroundResource(R.drawable.toast_success);
+				break;
 			default :
 				view = View.inflate(context, R.layout.cmp_rich_toast, null);
 				img = (ImageView)view.findViewById(R.id.toast_img);
@@ -78,11 +89,11 @@ public class ToastUtil
 	}
 
 	/**
-	 * ���Կ�����ʾʱ���Toast
+	 * 可以控制显示时间的Toast
 	 * @param context
-	 * @param str ��ʾ���ַ�
-	 * @param typeOfToastShow	Toast���� ---> ERROR��WARN��INFO��LOAD
-	 * @param showTime		��ʾʱ��
+	 * @param str 显示的字符串
+	 * @param typeOfToastShow	Toast类型 ---> ERROR、WARN、INFO、LOAD
+	 * @param showTime		显示时间
 	 */
 	public static void show(Context context,String str,int typeOfToastShow,int showTime)
 	{

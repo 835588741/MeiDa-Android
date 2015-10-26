@@ -11,7 +11,7 @@ public class HomeData
 
 		ArrayList<HomeGridView> list = new ArrayList<HomeGridView>();
 
-		String[] array = new String[]{"美女","俊男","美景","论坛","我的图片","健身计步器"};
+		String[] array = new String[]{"美女","美男","美景","论坛","我的图片","健身计步器"};
 		int[] iconIds = new int[]{R.drawable.icon_women,R.drawable.icon_man,R.drawable.icon_mountain,R.drawable.icon_chat,R.drawable.tab_book,R.drawable.icon_counter};
 
 		for ( int i = 0; i < array.length; i++ )

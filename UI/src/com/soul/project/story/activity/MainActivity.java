@@ -2,6 +2,7 @@ package com.soul.project.story.activity;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.annotation.SuppressLint;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -25,9 +26,9 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import com.sdjkjw.Uxmejr;
 import com.soul.project.application.adapter.MainFragmentAdapter;
-import com.soul.project.application.base.BaseHandler;
 import com.soul.project.application.base.HandlerMessage;
 import com.soul.project.application.component.AlertDialog;
 import com.soul.project.application.data.dummy.HomeData;
@@ -164,12 +165,11 @@ public class MainActivity extends FragmentActivity implements TabListener, OnCli
 			LogUtil.i(tag, e.toString());
 		}
 		
-		//login();
 	}
 
 	private void login()
 	{
-		Intent intent = new Intent(this, Login.class);
+		Intent intent = new Intent(this, LoginActivity.class);
 		startActivity(intent);
 	}
 
@@ -439,14 +439,14 @@ public class MainActivity extends FragmentActivity implements TabListener, OnCli
 		}
 	}
 
-	BaseHandler baseHandler = new BaseHandler(this)
-	{
-		@Override
-		public void handleMessage(Message msg)
-		{
-			super.handleMessage(msg);
-		}
-	};
+//	BaseHandler baseHandler = new BaseHandler(this)
+//	{
+//		@Override
+//		public void handleMessage(Message msg)
+//		{
+//			super.handleMessage(msg);
+//		}
+//	};
 
 
 	private void toSettingActivity()
