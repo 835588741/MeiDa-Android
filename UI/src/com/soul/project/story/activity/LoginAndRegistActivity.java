@@ -32,17 +32,7 @@ public class LoginAndRegistActivity extends BaseActivity implements OnClickListe
 		
 		initViews();
 		initEvent();
-		testBlueThooth2();
 	}
-	
-	private void testBlueThooth2() {
-		// TODO Auto-generated method stub
-//		BlueTooth2 blueTooth = new BlueTooth2(this);
-//		blueTooth.openBlueTooth();
-//		blueTooth.searchDevices();
-//		blueTooth.getAleadyPairDevices();
-	}
-
 
 
 	private void initEvent() {
