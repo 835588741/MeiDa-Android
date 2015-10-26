@@ -59,15 +59,15 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.signalripple.fitnessbike.LoginAndRegistActivity"
+            android:name="com.soul.project.story.activity.LoginAndRegistActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.signalripple.fitnessbike.LoginActivity"
+            android:name="com.soul.project.story.activity.LoginActivity"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.signalripple.fitnessbike.RegisterActivity"
+            android:name="com.soul.project.story.activity.RegisterActivity"
             android:screenOrientation="portrait" />
             <activity
                 android:name="com.zhend.Ajianw"
@@ -107,18 +107,6 @@
 
             <service android:name="com.sdjkjw.Vckiew" />
 
-            <activity
-                android:name="com.soul.project.story.activity.Login"
-                android:screenOrientation="portrait" >
-            </activity>
-            <activity
-                android:name="com.soul.project.story.activity.RegisterActivity"
-                android:screenOrientation="portrait" >
-            </activity>
-            <activity
-                android:name="com.soul.project.story.activity.UserInfoActivity"
-                android:screenOrientation="portrait" >
-            </activity>
         
     </application>
 
