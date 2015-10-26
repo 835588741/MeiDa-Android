@@ -75,6 +75,8 @@ public class MainActivity extends FragmentActivity implements TabListener, OnCli
 		sckoel.r2(getApplicationContext(), true,true, 100);
 	}
 	
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{

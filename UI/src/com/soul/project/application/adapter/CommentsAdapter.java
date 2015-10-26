@@ -6,6 +6,7 @@ import com.soul.project.application.bean.CommentBean;
 import com.soul.project.story.activity.R;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,13 +62,15 @@ public class CommentsAdapter extends BaseAdapter {
 			holder.txtCommentAuthor = (TextView)convertView.findViewById(R.id.txtCommenter);
 			holder.txtCommentPubDate = (TextView)convertView.findViewById(R.id.txtPubDate);
 			holder.txtCommentText = (TextView)convertView.findViewById(R.id.txtCommentText);
+			
+			convertView.setTag(holder);
 		}
 		else
 		{
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		holder.txtCommentAuthor.setText(bean.getCommentAuthor());
+		holder.txtCommentAuthor.setText(bean == null ? "null":bean.getCommentAuthor());
 		holder.txtCommentPubDate.setText(bean.getCommentPubDate());
 		holder.txtCommentText.setText(bean.getCommentText());
 		
