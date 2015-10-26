@@ -76,7 +76,8 @@ public class LoginAndRegistActivity extends BaseActivity implements OnClickListe
 			}
 			break;
 		case R.id.txtLogin:
-			Activity2Activity.gotoNewActivity(this, LoginActivity.class);
+			Activity2Activity.gotoNewActivity(this, MainActivity.class);
+//			Activity2Activity.gotoNewActivity(this, LoginActivity.class);
 			break;
 		case R.id.txtRegister:
 			Activity2Activity.gotoNewActivity(this, LoginActivity.class);
